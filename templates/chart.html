@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins & display=swap');
+
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+      }
+
+      h1{
+        color:white;
+      }
+
+      header{
+        position:fixed;
+        top:0;
+        left:0;
+        width :100%;
+        padding: 20px 100px;
+        background: rgba(255,255,255,.1);  
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(7px);
+        border-radius: 2px solid rgba(255,255,255,.2);
+      }
+
+      .logo{
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      body{
+        background-image: url(../static/img2login.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      nav a{
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        margin-left: 35px;
+        transition: .3s;
+      }
+
+      nav a:hover{
+        color: blue;
+      }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo">Crime</a>
+        <nav>
+          <a  href="/">Home</a>
+          <a  href="/login">Login</a>
+          <a  href="/upload">Upload</a> 
+          <a  href="/preview">Preview</a>
+          <a  href="/predict">Predict</a>
+          <a href="/pref"> Performance Analysis</a>
+          <a href="/chart">Chart</a>
+          <a href="/">LogOut</a>
+        </nav>
+    </header>
+  </br>
+</br>
+    <main id="main">
+        <div id="about" class="about-area area-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline text-center">
+                  <h2>chart</h2>
+                </div>
+              </br>
+            </br>
+                 <center><h1> Highest crime type </h1></center>
+                  <html>
+      <head>
+                   
+                      <div class="col-md-6 col-lg-4" style="margin-left:150px"> 
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["crime_types", "percentage", { role: "style" } ],
+            ["ROBBERY", 99, "#b87333"],
+            ["THEFT", 85, "#76A7FA"],
+            ["SEX OFFENSE", 70, "gold"],
+            ["WEAPONS VIOLATION ", 60, "color: #0000FF"]
+            ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+           var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+          chart.draw(view, options); 
+      }
+      </script>
+      </br>
+    </br>
+     <center><div id="columnchart_values" style="width: 900px; height: 300px;"></div> </center>
+    </body>
+  </br>
+</br>
+
+     <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['dayOfWeek', 'Percentage'],
+          ['Monday',     30],
+          ['Tuesday',    40],
+		      ['Wednesday',     50],
+          ['Thursday',    60],
+		      ['Friday',     70],
+          ['Saturday',    85],
+		      ['Sunday',     90]
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+	  
+    </script>
+  </head>
+</br>
+</br>
+  <body>
+  </br></br></br></br>
+  <center><h1>Percentage of crime occurence with particular DayOfWeek</h1></center>
+  <center>  <div id="piechart_3d" style="width: 900px; height: 500px; "></div></center>
+	 
+</body>
+		  <br>
+		  <br>
+		  <html>
+  <head>
+    
+  </main>
+  <footer>
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+  <script src="../static/js/main.js"></script>
+  </br>
+</br>
+</body>
+</html>

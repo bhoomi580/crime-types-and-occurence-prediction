@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins: wght@200;300; 400; 500; 600; 700; 800;900&display=swap');
+      *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+      }
+
+      header{
+        position:fixed;
+        top:0;
+        left:0;
+        width :100%;
+        padding: 20px 100px;
+        background: rgba(255,255,255,.1);  
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(7px);
+        border-radius: 2px solid rgba(255,255,255,.2);
+      }
+
+      .logo{
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      body{
+        background-image: url(../static/imgpref.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      nav a{
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        margin-left: 35px;
+        transition: .3s;
+      }
+
+      nav a:hover{
+        color: blue;
+      }
+
+      .cd{
+        padding-top: 50%;
+      }
+
+      .site-section{
+        padding-top: 50%;
+      }
+
+      .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .section-title{
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .lead{
+        font-size: 18px;
+      }
+
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+
+      .mb-5{
+        margin-bottom: 5rem;
+      }
+
+      .justify-content-center{
+        justify-content: center;
+      }
+
+      .col-md-8{
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+
+      .text-center{
+        text-align: center;
+      }
+
+      .col-lg-8{
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+
+      .mx-auto{
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .border-bottom{
+        border-bottom: 1px solid #dee2e6!important;
+      }
+
+      .col-lg-8 img{
+        margin-left: 60px;
+        width: 800px;
+        height: 500px;
+      }
+
+    </style>  
+</head>
+<body>
+    <header>
+        <a class="logo">Crime</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/upload">Upload</a>
+            <a href="/predict">Predict</a>
+            <a href="/pref">Performance Analysis</a>
+            <a href="/chart">Chart</a>
+        </nav>
+    </header>
+    <section>
+        <center> <div class="cd" style="margin-left: 220px">
+            <h1>PERFORMANCE ANALYSIS</h1>
+        </div> 
+        <br>
+        <br>
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 300px; color: green; font-size: 24px;"><font size="12">Precision and recall </font> </span>
+            </div>
+        </div>
+        <br>
+        <br> 
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 550px; color: black; font-size: 24px;"><font size="12">Recall Precision </font> </span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 50px; color: black; font-size: 24px;"><font size="12">ROBBEERY </font> </span>
+                <span style="margin-left: 280px; color: black; font-size: 24px;"><font size="12">0.67 0.78</font></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 50px; color: black; font-size: 24px;"><font size="12">SEX OFFENSE </font> </span>
+                <span style="margin-left: 280px; color: black; font-size: 24px;"><font size="12">0.93 0.84</font></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 50px; color: black; font-size: 24px;"><font size="12">THEFT </font> </span>
+                <span style="margin-left: 380px; color: black; font-size: 24px;"><font size="12">0.82 0.92</font></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="middle-align">
+            <div>
+                <span style="margin-left: 50px; color: black; font-size: 24px;"><font size="12">WEAPONS VIOLATION </font> </span>
+                <span style="margin-left: 280px; color: black; font-size: 24px;"><font size="12">0.81 0.65</font></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-lg-8 mx-auto">
+            <div><span style="margin-left: 170px; color: red; font-size: 24px;"><font size="12"> Confusion Matrix</font></span> </div></center>
+            <br>
+            <br>
+            <center>
+                <div><img style="margin-left: 60px; width:800px; height: 500px;" src="../static/confusion.png" alt="Confusion Matrix">  </div>
+
+
+            </center>
+        </div> 
+    </section>
+</body>
+</html>

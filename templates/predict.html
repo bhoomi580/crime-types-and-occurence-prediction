@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins & display=swap');
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            background: rgba(255,255,255,.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(7px);
+            border-radius: 2x solid rgba(255,255,255,.2);
+        }
+
+        .logo{
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 35px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        nav a{
+          text-decoration:none;
+          font-size:20px;
+          color:white;
+          margin-right:35px;
+          transition:.3s;
+        }
+
+        nav a:hover{
+           color:blue;
+        }
+
+
+        body{
+          margin: 0;
+          padding: 0;
+          background-image: url(../static/imgpredict.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+
+        .form-container{
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0.0.0.0.1);
+        }
+
+        .am{
+            padding-top: 50%;
+        }
+
+        .button-primary{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color:#fff;
+            font-size: 16px;
+            border:none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .button-primary:hover{
+            background-color: #e65c00;
+        }
+
+        .cd{
+        padding-top: 50%;
+      }
+
+      .site-section{
+        padding-top: 50%;
+      }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo">Crime</a>
+      <nav>
+        <a  href="/">Home</a>
+        <a  href="/login">Login</a>
+        <a  href="/upload">Upload</a> 
+        <a  href="/preview">Preview</a>
+        <a  href="/predict">Predict</a>
+        <a href="/pref"> Performance Analysis</a>
+      </nav>
+    </header> 
+    <div class="am">
+        <form name="form1" action="{{url_for('prediction')}}" method="post" class="form-container">
+            <div class="span5">
+                <div class="control-group">
+                    <center><label class="control-label" for="inputMessage"><b></b></label><br></center>
+                    <br>
+                    
+                    <div class="controls">
+                       <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Year: </b> <input type="text" name="Year" placeholder="Year" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+
+                    <div class="controls">
+                        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Month: </b> <input type="text" name="Month" placeholder="Month" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+ 
+                    <div class="controls">
+                        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Day: </b> <input type="text" name="Day" placeholder="Day" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+ 
+                    <div class="controls">
+                        <center><b> dayOfWeek:</b>
+                          <select type="text" name="dayOfWeek" required="required" placeholder="dayOfWeek" width="300" style="width:300px">
+                            <option value="0">Monday</option>
+                            <option value="1">TUesday</option>
+                            <option value="2">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="3">Friday</option>
+                            <option value="3">Saturay</option>
+                            <option value="3">Sunday</option>
+                          </select> 
+                        </center>
+                    </div>
+                    <br>
+
+                    <div class="controls">
+                        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Minute: </b> <input type="text" name="Minute" placeholder="Minute" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+
+                    <div class="controls">
+                       <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Second: </b> <input type="text" name="Second" placeholder="Second" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+                
+                    <div class="controls">
+                        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Latitude: </b> <input type="text" name="Latitude" placeholder="Latitude" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+
+                    <div class="controls">
+                        <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Longitude: </b> <input type="text" name="Longitude" placeholder="Longitude" required="requried" width="300" style="width:300px" </center>
+                    </div>
+                    <br>
+
+                <center><button type="submit" class="button-primary"> Predict </button> </center>
+
+            </div>
+        </form>
+        <br>
+        <br>
+        
+        <center>
+            <h1 style="color:black;"> Prediction is: {{prediction_text}}</h1>
+        </center>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preview Data</h1>
+    <div class="sc">
+        {{ df_view.to_html(classes="table striped", na_rep="-") | safe }}
+    </div>
+    <div class="form-group" style="padding:0px 250px 10px 40px;height:200px">
+        <input style="margin-left:300px" type="button" onclick="hideLoader()" class="btn" value="Click to Train | Test" />
+      <div id="loading" style="display:None;margin-top:552950px"></div>
+      </div>
+      
+      <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+         <script type='text/javascript'>
+         
+      function hideLoader() {  
+      
+           alert("Training finished!");
+           window.location = "{{url_for('predict')}}";
+           
+      }
+      
+      
+         </script>
+      
+</body>
+</html>
